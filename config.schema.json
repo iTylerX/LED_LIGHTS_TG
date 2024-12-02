@@ -1,16 +1,42 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "LED_LIGHTS_TG",
   "pluginType": "platform",
   "singular": true,
   "strictValidation": false,
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
-        "title": "Name",
-        "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
+      "devices": {
+        "type": "array",
+        "title": "Bluetooth LED Lights",
+        "description": "List of Bluetooth LED strip devices",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Device Name",
+              "description": "The name of the LED strip as displayed in Homebridge",
+              "default": "Living Room LED"
+            },
+            "macAddress": {
+              "type": "string",
+              "title": "MAC Address",
+              "description": "The Bluetooth MAC address of the LED strip (e.g., FF:10:10:86:1D:80)",
+              "pattern": "^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$",
+              "minLength": 17,
+              "maxLength": 17,
+              "required": true
+            },
+            "BT_Name": {
+              "type": "string",
+              "title": "Bluetooth Name",
+              "description": "The Bluetooth name of the LED strip to identify it for connection (e.g., BJ_LED_M)",
+              "default": "BJ_LED_M"
+            }
+          },
+          "required": ["macAddress", "BT_Name", "name"]
+        }
       }
     }
   }

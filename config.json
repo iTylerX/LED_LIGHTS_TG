@@ -1,13 +1,20 @@
 {
     "platforms": [
-        {
-            "platform": "LED_LIGHTS_TG",
-            "devices": [
-                {
-                    "name": "Living Room LED",
-                    "macAddress": "FF:10:10:86:1D:80"
-                }
-            ]
-        }
+      {
+        "platform": "LED_LIGHTS_TG",
+        "devices": [
+          {
+            "name": "Living Room LED",
+            "macAddress": "FF:10:10:86:1D:80",
+            "BT_Name": "BJ_LED_M"
+          },
+          {
+            "name": "Bedroom LED",
+            "macAddress": "FF:10:10:86:2D:90",
+            "BT_Name": "BJ_LED_M"
+          }
+        ]
+      }
     ]
-}
+  }
+  

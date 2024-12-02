@@ -2,7 +2,7 @@
   "name": "homebridge-bluetooth-led-lights-tg",
   "displayName": "BLUETOOTH LED LIGHTS TG",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "A Homebridge plugin to control Bluetooth-enabled LED light strips in homekit. No password or pin required for the Bluetooth connection.",
   "author": "Tyler Grove",

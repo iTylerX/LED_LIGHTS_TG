@@ -11,7 +11,7 @@ export class LEDLightsTGAccessory {
     private readonly platform: LEDLightsTGPlatform,
     private readonly accessory: PlatformAccessory,
   ) {
-    const device = accessory.context.device as { name: string; macAddress: string };
+    const device = accessory.context.device as { name: string; macAddress: string; BT_Name: string };
 
     this.service = this.accessory.getService(this.platform.Service.Lightbulb)
       || this.accessory.addService(this.platform.Service.Lightbulb);
@@ -32,9 +32,9 @@ export class LEDLightsTGAccessory {
     }
   }
 
-  private handleDiscover(peripheral: Peripheral, device: { name: string; macAddress: string }): void {
-    if (peripheral.address === device.macAddress.toLowerCase()) {
-      this.platform.log.info(`Discovered ${device.name}`);
+  private handleDiscover(peripheral: Peripheral, device: { name: string; macAddress: string; BT_Name: string }): void {
+    if (peripheral.advertisement.localName === device.BT_Name) {
+      this.platform.log.info(`Discovered ${device.name} (BT Name: ${device.BT_Name})`);
       this.devicePeripheral = peripheral;
 
       noble.stopScanning();

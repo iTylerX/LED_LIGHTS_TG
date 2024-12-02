@@ -1,11 +1,7 @@
 import type { API } from 'homebridge';
+import { LEDLightsTGPlatform } from './platform';  // Assuming platform.ts exists
+import { PLATFORM_NAME } from './settings';  // Assuming settings.ts exists
 
-import { LEDLightsTGPlatform } from './platform.js';
-import { PLATFORM_NAME } from './settings.js';
-
-/**
- * This method registers the platform with Homebridge
- */
-export default (api: API) => {
+export function pluginName(api: API) {
   api.registerPlatform(PLATFORM_NAME, LEDLightsTGPlatform);
-};
+}
