@@ -1,22 +1,26 @@
 {
-  "name": "homebridge-plugin-name",
-  "displayName": "Plugin Name",
+  "name": "homebridge-bluetooth-led-lights-tg",
+  "displayName": "BLUETOOTH LED LIGHTS TG",
   "type": "module",
   "version": "1.0.0",
-  "private": true,
-  "description": "A short description about what your plugin does.",
-  "author": "Your Name",
+  "private": false,
+  "description": "A Homebridge plugin to control Bluetooth-enabled LED light strips in homekit. No password or pin required for the Bluetooth connection.",
+  "author": "Tyler Grove",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/USERNAME/GITHUB_PROJECT_NAME#readme",
+  "homepage": "https://github.com/iTylerX/LED_LIGHTS_TG#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME.git"
+    "url": "https://github.com/iTylerX/LED_LIGHTS_TG.git"
   },
   "bugs": {
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME/issues"
+    "url": "https://github.com/iTylerX/LED_LIGHTS_TG/issues"
   },
   "keywords": [
-    "homebridge-plugin"
+    "homebridge-plugin",
+    "bluetooth",
+    "led",
+    "lights",
+    "homekit"
   ],
   "main": "dist/index.js",
   "engines": {
@@ -27,7 +31,8 @@
     "build": "rimraf ./dist && tsc",
     "lint": "eslint . --max-warnings=0",
     "prepublishOnly": "npm run lint && npm run build",
-    "watch": "npm run build && npm link && nodemon"
+    "watch": "npm run build && npm link && nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
@@ -38,7 +43,13 @@
     "nodemon": "^3.1.7",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3",
+    "typescript": "^5.7.2",
     "typescript-eslint": "^8.12.2"
+  },
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2-25"
+  },
+  "peerDependencies": {
+    "homebridge": "^1.8.0 || ^2.0.0-beta.0"
   }
 }

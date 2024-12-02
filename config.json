@@ -1,0 +1,13 @@
+{
+    "platforms": [
+        {
+            "platform": "LED_LIGHTS_TG",
+            "devices": [
+                {
+                    "name": "Living Room LED",
+                    "macAddress": "FF:10:10:86:1D:80"
+                }
+            ]
+        }
+    ]
+}
